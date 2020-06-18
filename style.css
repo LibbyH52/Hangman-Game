@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     height: 20vh;
-    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
 }
 
 .heading{
     font-size: 1rem;
     font-weight: bold;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 1rem;
     box-shadow: none;
 }
@@ -24,7 +25,7 @@
 }
 
 .icon{
-    padding: .75rem;
+    padding:0  .75rem;
 }
 
 
@@ -70,6 +71,10 @@ button{
 }
 
 @media screen and (min-width: 768px){
+    .heading{
+        margin-right: auto;
+    }
+
     .icons{
         margin-left: auto;
     }
