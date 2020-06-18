@@ -9,7 +9,6 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 20vh;
     padding-bottom: 1.5rem;
 }
 
@@ -21,10 +20,10 @@ body{
 }
 
 .icons{
-    display: flex;
-    align-items: center;
+    align-self: center;
     font-size: 2.5rem;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 .icon{
@@ -54,6 +53,7 @@ h1{
 }
 
 .form-group {
+    background: #1d1145;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -62,7 +62,7 @@ h1{
 }
 
 label{
-    color: #1d1145;
+    color: #e76d89;
     font-family: 'Sriracha', cursive;
     font-size: 2rem;
     font-weight: bold;
@@ -78,9 +78,9 @@ input{
 }
 
 button{
-    background: #1d1145;
+    background: #e76d89;
     border-radius: 5px;
-    color: #f2a1a1;
+    color: #1d1145;
     font-size: 20px;
     font-weight: bold;
     height: 32px;
@@ -89,10 +89,6 @@ button{
 }
 
 @media screen and (min-width: 768px){
-    .header{
-        flex-direction: row;
-    }
-
     .heading{
         margin-left: 0;
     }
@@ -109,15 +105,27 @@ button{
 
     .center{
         height: 60%;
-        width: 40%;
+        width: 60%;
+    }
+
+    .form-group{
+        flex-direction: row;
+    }
+
+    label{
+        width: 60%;
+        margin-right: 0;
     }
 
     input{
-        width: 4  0%;
+        color: #1d1145;
+        margin-left: 0;
+        text-align: right;
+        width: 25%;
     }
     
     button{
-        width: 40%;
+        width: 50%;
     }
 }
 
@@ -128,5 +136,6 @@ button{
 
     .icons{
         font-size: 3rem;
-    }   
+    } 
+  
 }
