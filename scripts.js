@@ -1,12 +1,11 @@
 /* jslint browser */
+
 const numberButton = document.querySelector('.numberButton');
 let randomNumber = Math.floor(Math.random() * 100);
 let userNumber = 0;
 
 const inputNumber = () => {
-    'use strict'
     userNumber = document.querySelector('#number').value;
-    'use strict'
     if (userNumber < randomNumber) {
         alert(`${userNumber} is too low`);
     } else if (userNumber > randomNumber) {
