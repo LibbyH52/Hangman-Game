@@ -1,9 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .header{
-    background: #37123c;
-    color: #dda77b;
+    background: #1d1145;
+    color: #f2a1a1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 20vh;
     padding-bottom: 1.5rem;
 }
 
@@ -25,45 +31,61 @@
     padding:0  .75rem;
 }
 
-
 h1{
     font-family: 'Sriracha', cursive;
     font-size: 2rem;
 }
 
 .container{
+    background: #f2a1a1;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 80vh;
     width: 100%;
 }
 
 .center{
     margin: 0 auto;
     height: 60%;
-    width: 75%;
+    width: 80%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+label{
+    color: #1d1145;
+    font-family: 'Sriracha', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
 }
 
 input{
-    border: 4px solid #37123c;
+    border: 4px solid #1d1145;
     font-size: 2.5rem;
-    height: 48px;
-    margin: 0 auto;
-    text-align: center;
-    width: 60%;
+    height: 40px;
+    margin: .5rem auto;
+    width: 50%;
 }
 
 button{
-    background: #dda77b;
+    background: #1d1145;
     border-radius: 5px;
-    color: #37123c;
+    color: #f2a1a1;
     font-size: 20px;
     font-weight: bold;
     height: 32px;
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
 }
 
 @media screen and (min-width: 768px){
@@ -82,7 +104,7 @@ button{
     .container{
         height: 600px;
         margin: 0 auto;
-        width: 90%;
+        width: 100%;
     }
 
     .center{
