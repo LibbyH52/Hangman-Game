@@ -82,13 +82,18 @@ button{
     background: #e76d89;
     border-radius: 5px;
     color: #1d1145;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
     height: 32px;
     margin: 0 auto;
     width: 90%;
 }
 
+@media screen and (max-width: 325px){
+    button{
+        font-size: 1rem;
+    }
+}
 @media screen and (min-width: 768px){
     .heading{
         margin-left: 0;
