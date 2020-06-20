@@ -13,7 +13,7 @@ const inputNumber = () => {
     } else if (userNumber > randomNumber) {
         alert(`${userNumber} is too high`);
     } else {
-        alert(`You are correct. Well done. The number was ${userNumber}`);
+        alert(`Well done. The number was ${userNumber}`);
         window.location.reload();
     }
    
