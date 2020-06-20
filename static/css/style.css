@@ -59,6 +59,7 @@ a{
     box-shadow: none;
 }
 
+/***********************Icon styles*/
 .icons{
     display: flex;
     align-items: center;
@@ -79,18 +80,27 @@ a{
     color: #1d1145;
 }
 
+.game-icon a{
+    color: #f2a1a1; 
+}
+
+.home{
+    align-self: flex-end;
+}
+
 h1{
     font-family: 'Sriracha', cursive;
     font-size: 2rem;
 }
 
+/***********************Container for Number Game*/
 .container{
     background: #f2a1a1;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     height: 80vh;
     width: 100%;
 }
@@ -138,11 +148,17 @@ button{
     width: 90%;
 }
 
+/***********************Max-width media query for iPhone 5*/
 @media screen and (max-width: 325px){
+    label{
+        font-size: 1.5rem;
+    }
+
     button{
         font-size: 1rem;
     }
 }
+
 @media screen and (min-width: 768px){
     .heading{
         margin-left: 0;
@@ -183,7 +199,7 @@ button{
     }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 1025px){
     h1{
         font-size: 3rem;
     }
