@@ -60,12 +60,14 @@ a{
 }
 
 .icons{
+    display: flex;
+    align-items: center;
     font-size: 2.5rem;
+    justify-content: center;
     margin: 0 auto;
 }
 
 .icon{
-    align-self: center;
     font-size: 2.5rem;
     padding: 0 .75rem;
 }
@@ -76,6 +78,7 @@ a{
 .home-icon a:visited{
     color: #1d1145;
 }
+
 h1{
     font-family: 'Sriracha', cursive;
     font-size: 2rem;
