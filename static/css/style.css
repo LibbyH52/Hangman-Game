@@ -5,7 +5,7 @@ body{
 
 .main-container{
     display: grid;
-    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-columns: 12fr;
 }
 
 a{
@@ -107,7 +107,7 @@ h1{
 
 .center{
     margin: 0 auto;
-    height: 60%;
+    height: 100%;
     width: 80%;
 }
 
@@ -168,6 +168,10 @@ button{
         margin-right: 0;
     }
 
+    .main-container{
+        grid-template-columns: 6fr 6fr;
+    }
+
     .container{
         height: 600px;
         margin: 0 auto;
@@ -200,6 +204,10 @@ button{
 }
 
 @media screen and (min-width: 1025px){
+    .main-container{
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+    }
+    
     h1{
         font-size: 3rem;
     }
