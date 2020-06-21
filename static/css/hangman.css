@@ -1,0 +1,8 @@
+.word{
+    display: block;
+    width: 200px;
+}
+
+.letter{
+    border: 1px solid black;
+}
