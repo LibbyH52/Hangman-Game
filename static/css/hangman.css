@@ -1,12 +1,22 @@
+.container{
+    margin: 0 auto;
+    width: 800px;
+}
+
 .word{
     display: block;
-    width: 600px;
+    min-width: 100%;
+    margin-top: 5rem;
 }
 
 .letter{
-    border-bottom: 2px solid black;
+    border: 2px solid black;
+    border-radius: 10%;
     display: inline-block;
-    height: 50px;
+    font-size: 4rem;
+    line-height: 6rem;
     width: 50px;
     margin: 2px;
+    padding-bottom: 0;
+    text-align: center;
 }
