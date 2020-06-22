@@ -9,7 +9,8 @@
     margin-top: 5rem;
 }
 
-.letter{
+.blank{
+    background: #f1f1f1;
     border: 2px solid black;
     border-radius: 10%;
     display: inline-block;
