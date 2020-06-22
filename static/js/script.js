@@ -4,6 +4,7 @@ const numberButton = document.querySelector('.numberButton');
 let randomNumber = Math.floor(Math.random() * 100);
 let userNumber = 0;
 
+/*Function to inform user if guess is to high or too low comparing it  randomNumber*/
 const inputNumber = () => {
     userNumber = parseInt(document.querySelector('#number').value);
     if  (userNumber < 1 || userNumber >= 100) {
@@ -16,11 +17,11 @@ const inputNumber = () => {
         alert(`Well done. The number was ${userNumber}`);
         window.location.reload();
     }
-   
-   
+   /*Clears input field*/  
     document.querySelector('#number').value = '';
 };
 
+/*Function to allow user to continue inputting numbers until guess is correct*/
 const checkNumber = () => {
     randomNumber = Math.floor(Math.random() * 100);
     while (userNumber !== randomNumber) {
