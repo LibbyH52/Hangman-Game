@@ -13,9 +13,14 @@ startButton.addEventListener('click', function() {
        printWord();
 });
 
-//iterates through the array and prints it to the screen
+//removes any existing content in 'div.word'
+const deleteWord = () => {
+    document.querySelector('.word').innerHTML = '';
+}
+
+//prints the contents of random to the screen
 const printWord = () => {
-    // let randomWord = "computer";
+    deleteWord();
     chooseRandomWord();
     for(let i=0; i< random.length; i++){
         console.log(random[i]);
