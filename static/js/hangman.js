@@ -1,18 +1,10 @@
 const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
 let letter = '';
+let random = [];
 
 const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake'];
 
-//picks a random word from wordArray and splits it
-const chooseRandomWord = () => {
-    let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-    random = randomWord.split('');
-}
-
-startButton.addEventListener('click', function() {
-       printSpaces();
-});
 
 //removes any existing content in 'div.word'
 const deleteWord = () => {
@@ -31,4 +23,11 @@ const printSpaces = () => {
         blankDiv.appendChild(letter);
         selectedWord.appendChild(blankDiv);
     };
+}
+
+
+//picks a random word from wordArray and splits it
+const chooseRandomWord = () => {
+    let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    random = randomWord.split('');
 }
