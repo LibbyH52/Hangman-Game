@@ -1,5 +1,6 @@
 const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
+let letter = '';
 
 const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake'];
 
@@ -25,9 +26,9 @@ const printSpaces = () => {
     for(let i=0; i< random.length; i++){
         console.log(random[i]);
         let blankDiv = document.createElement('div');
-        //letter = document.createTextNode(random[i]);
         blankDiv.classList.add('blank');
-        //blankDiv.appendChild(letter);
+        letter = document.createTextNode('*');
+        blankDiv.appendChild(letter);
         selectedWord.appendChild(blankDiv);
     };
 }
