@@ -10,7 +10,7 @@ const chooseRandomWord = () => {
 }
 
 startButton.addEventListener('click', function() {
-       printWord();
+       printSpaces();
 });
 
 //removes any existing content in 'div.word'
@@ -18,16 +18,16 @@ const deleteWord = () => {
     document.querySelector('.word').innerHTML = '';
 }
 
-//prints the contents of random to the screen
-const printWord = () => {
+//prints empty boxes to the screen
+const printSpaces = () => {
     deleteWord();
     chooseRandomWord();
     for(let i=0; i< random.length; i++){
         console.log(random[i]);
-        let letterDiv = document.createElement('div');
-        letter = document.createTextNode(random[i]);
-        letterDiv.classList.add('letter');
-        letterDiv.appendChild(letter);
-        selectedWord.appendChild(letterDiv);
+        let blankDiv = document.createElement('div');
+        //letter = document.createTextNode(random[i]);
+        blankDiv.classList.add('blank');
+        //blankDiv.appendChild(letter);
+        selectedWord.appendChild(blankDiv);
     };
 }
