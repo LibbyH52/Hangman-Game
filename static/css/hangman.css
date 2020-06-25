@@ -11,9 +11,7 @@
 }
 
 .blank{
-    background: #f1f1f1;
-    border: 2px solid black;
-    border-radius: 10%;
+    border-bottom: 2px solid black;
     display: inline-block;
     font-size: 2.5rem;
     height: 2.5rem;
@@ -48,13 +46,11 @@
 /*************************Media Queries*/
 @media screen and (min-width: 768px){
     .container{
-        background: #3f3f3f;
         margin: 2rem auto;
         padding: 3rem;
     }
     
     .word{
-        background: purple;
         width: 60%;
     }
 
