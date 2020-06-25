@@ -47,19 +47,25 @@
 
 /*************************Media Queries*/
 @media screen and (min-width: 768px){
+    .container{
+        background: #3f3f3f;
+        margin: 2rem auto;
+        padding: 3rem;
+    }
+    
     .word{
         background: purple;
         width: 60%;
     }
 
     .letters{
-        background: pink;
-        width: 60%;
+        width: 75%;
     }
 
     .letter{
-        height: 40px;
-        width: 40px;
+        background: pink;
+        height: 50px;
+        width: 50px;
     }
 }
 
@@ -67,4 +73,15 @@
   .container{
       width: 70%;
   }
+
+  .letters{
+      width: 55%;
+  }
+
+  .letter{
+    background: pink;
+    height: 50px;
+    line-height: 3rem;
+    width: 50px;
+    }
 }
