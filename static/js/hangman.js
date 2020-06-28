@@ -1,5 +1,6 @@
 const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
+const letterKeys = document.querySelectorAll('.key')
 let letter = '';
 let random = [];
 
@@ -11,6 +12,12 @@ const deleteWord = () => {
     document.querySelector('.word').innerHTML = '';
 }
 
+//picks a random word from wordArray and splits it
+const chooseRandomWord = () => {
+    let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    random = randomWord.split('');
+}
+
 //prints empty boxes to the screen
 const printSpaces = () => {
     deleteWord();
@@ -19,15 +26,21 @@ const printSpaces = () => {
         console.log(random[i]);
         let blankDiv = document.createElement('div');
         blankDiv.classList.add('blank');
-        letter = document.createTextNode('*');
+        letter = document.createTextNode(random[i]);
         blankDiv.appendChild(letter);
         selectedWord.appendChild(blankDiv);
     };
 }
 
+letterKeys.forEach(letterKey => {
+    letterKey.addEventListener("click", () => {
+        let letter = letterKey.innerText;
+        if(random.includes(letter)){
+            console.log("Yes");
+        }
+        console.log(random);
+    });
+});
 
-//picks a random word from wordArray and splits it
-const chooseRandomWord = () => {
-    let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-    random = randomWord.split('');
-}
+startButton.addEventListener('click', printSpaces);
+
