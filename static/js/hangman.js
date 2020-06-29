@@ -36,7 +36,7 @@ letterKeys.forEach(letterKey => {
     letterKey.addEventListener("click", () => {
         let letter = letterKey.innerText;
         if(random.includes(letter)){
-            console.log("Yes");
+            console.log(random.indexOf(letter));
         }
         console.log(random);
     });
