@@ -1,4 +1,5 @@
 .game-container{
+    background: #f1f1f1;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -42,6 +43,15 @@
     line-height: 3rem;
     margin: .2rem;
     text-align: center;
+    width: 3rem;
+}
+
+.blank{
+    border-bottom: 1px solid #1f1f1f;
+    background: #f1f1f1;
+    color: #f1f1f1;
+    height: 3rem;
+    margin: 8px;
     width: 3rem;
 }
 
