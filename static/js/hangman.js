@@ -3,6 +3,7 @@ const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key')
 let letter = '';
 let random = [];
+let randomArray = [];
 let letterPosition = -1;
 let blankDiv;
 
@@ -28,6 +29,7 @@ const printSpaces = () => {
         blankDiv = document.createElement('div');
         blankDiv.classList.add('blank');
         selectedWord.appendChild(blankDiv);
+        randomArray.push(blankDiv);
     };
     console.log(random);
 }
@@ -35,16 +37,20 @@ const printSpaces = () => {
 letterKeys.forEach(letterKey => {
     letterKey.addEventListener("click", () => {
         let key = letterKey.innerText;
-        var randomArray = document.querySelectorAll('div .blank');
         console.log(randomArray);
-        let i=0;
+        let len = randomArray.length;
+        var score = 0;
         if(random.includes(key)){
+            letterPosition = random.indexOf(key);
+            if(randomArray[letterPosition].classList.contains('letterColour')){
+                alert("you already selected that letter");    
+            } else {
                 let letter = document.createTextNode(key)
-                letterPosition = random.indexOf(key);
-                blankDiv.classList.add('letterColour');
+                randomArray[letterPosition].classList.add('letterColour');
                 randomArray[letterPosition].appendChild(letter);
-                console.log(blankDiv);
-                console.log(letterPosition);
+                score=score+1;
+                alert(`Your score is now ${score}`);
+            }
         }
     });
 });
