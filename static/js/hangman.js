@@ -3,6 +3,8 @@ const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key')
 let letter = '';
 let random = [];
+let letterPosition = -1;
+let blankDiv;
 
 const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake'];
 
@@ -23,22 +25,27 @@ const printSpaces = () => {
     deleteWord();
     chooseRandomWord();
     for(let i=0; i< random.length; i++){
-        console.log(random[i]);
-        let blankDiv = document.createElement('div');
+        blankDiv = document.createElement('div');
         blankDiv.classList.add('blank');
-        letter = document.createTextNode(random[i]);
-        blankDiv.appendChild(letter);
         selectedWord.appendChild(blankDiv);
     };
+    console.log(random);
 }
 
 letterKeys.forEach(letterKey => {
     letterKey.addEventListener("click", () => {
-        let letter = letterKey.innerText;
-        if(random.includes(letter)){
-            console.log(random.indexOf(letter));
+        let key = letterKey.innerText;
+        var randomArray = document.querySelectorAll('div .blank');
+        console.log(randomArray);
+        let i=0;
+        if(random.includes(key)){
+                let letter = document.createTextNode(key)
+                letterPosition = random.indexOf(key);
+                blankDiv.classList.add('letterColour');
+                randomArray[letterPosition].appendChild(letter);
+                console.log(blankDiv);
+                console.log(letterPosition);
         }
-        console.log(random);
     });
 });
 
