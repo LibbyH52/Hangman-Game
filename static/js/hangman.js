@@ -1,10 +1,9 @@
 const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key')
-let letter = '';
 let random = [];
 let randomArray = [];
-let letterPosition = -1;
+let score = 0;
 let blankDiv;
 
 const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake'];
@@ -39,9 +38,8 @@ letterKeys.forEach(letterKey => {
         let key = letterKey.innerText;
         console.log(randomArray);
         let len = randomArray.length;
-        var score = 0;
         if(random.includes(key)){
-            letterPosition = random.indexOf(key);
+            let letterPosition = random.indexOf(key);
             if(randomArray[letterPosition].classList.contains('letterColour')){
                 alert("you already selected that letter");    
             } else {
