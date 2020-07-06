@@ -53,7 +53,6 @@ const checkScore = () => {
 const addLetter = () => {
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].classList.contains('letterColour')) {
-            console.log(randomArray[letterPosition]);
             alert("you already selected that letter"); 
         } else {
             letter = document.createTextNode(key);
@@ -65,26 +64,26 @@ const addLetter = () => {
     checkScore();
 }
 
-//checks for presence of selected letter in the random word
-letterKeys.forEach(letterKey => {
-    letterKey.addEventListener("click", () => {
-    letterPosition = [];
-    key = letterKey.innerText;
-    if(random.includes(key)){
-        for(let i=0; i<random.length; i++){
-            if(key === random[i]){
-                letterPosition.push(i);
-            }
-        } 
-            addLetter();
-        } else {
-            man += 1;
-            alert("That letter is incorrect. Please choose another one!");
-        }
-    });
+startButton.addEventListener('click', ()  => {
+        printSpaces();
+
+        //checks for presence of selected letter in the random word
+        const checkLetter = letterKeys.forEach(letterKey => {
+            letterKey.addEventListener("click", () => {
+            letterPosition = [];
+            key = letterKey.innerText;
+            if(random.includes(key)){
+                for(let i=0; i<random.length; i++){
+                    if(key === random[i]){
+                        letterPosition.push(i);
+                    }
+                } 
+                    addLetter();
+                } else {
+                    man += 1;
+                    alert("That letter is incorrect. Please choose another one!");
+                }
+            });
+        });  
 });
-
-
-
-startButton.addEventListener('click', printSpaces);
 
