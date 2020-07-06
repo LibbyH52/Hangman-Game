@@ -12,6 +12,7 @@
     height: 100px;
     justify-content: center;
     margin-top: 3rem;
+    margin: 3rem auto 0 auto;
     width: 90vw;
     text-align: center;
 }
@@ -49,10 +50,14 @@
 .blank{
     border-bottom: 1px solid #1f1f1f;
     background: #f1f1f1;
-    color: #f1f1f1;
     height: 3rem;
     margin: 8px;
     width: 3rem;
+}
+ 
+.letterColour{
+    color: black;
+    font-size: 2.5rem;
 }
 
 /*************************Media Queries*/
