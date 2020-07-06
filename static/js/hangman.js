@@ -8,6 +8,7 @@ let score = 0;
 let key = '';
 let letter = '';
 let blankDiv;
+let man = 0;
 
 const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridges', 'photograph', 'surfboard'];
 
@@ -38,6 +39,17 @@ const printSpaces = () => {
     console.log(random);
 }
 
+const checkScore = () => {
+    if(score === randomArray.length){
+        let word = random.join('');
+        alert(`Well done the word was ${word}`); 
+        window.location.reload();
+    } else if(man === 13){
+        alert("You have had too many incorrect guesses. Game over!");
+        window.location.reload();
+    }
+}
+
 //adds class of letterColour to blankDiv 
 const addLetter = () => {
     for(let j=0; j<letterPosition.length; j++){
@@ -48,13 +60,14 @@ const addLetter = () => {
             letter = document.createTextNode(key);
             randomArray[letterPosition[j]].classList.add('letterColour');
             randomArray[letterPosition[j]].appendChild(letter);
-            score=score+1;
-            alert(`Your score is now ${score}`);   
+            score=score+1;  
             console.log(randomArray[letterPosition[j]])
             console.log(randomArray);
+            console.log(randomArray.length)
+            console.log(score)
         }
     }
-    console.log(letterPosition)
+    checkScore();
 }
 
 //checks for presence of selected letter in the random word
@@ -70,6 +83,7 @@ letterKeys.forEach(letterKey => {
         } 
             addLetter();
         } else {
+            man += 1;
             alert("That letter is incorrect. Please choose another one!");
         }
     });
