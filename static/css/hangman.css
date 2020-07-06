@@ -1,9 +1,15 @@
 .game-container{
     background: #f1f1f1;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin: 0 auto;
     max-width: 100%;
+}
+
+.word-container{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .word{
@@ -17,9 +23,7 @@
     text-align: center;
 }
 
-.person{
-    display: flex;
-    flex-wrap: wrap;
+.person-container{
     background: #1ff2f1;
     height: 400px;
     margin: 0 auto;
@@ -27,18 +31,20 @@
 }
 
 .keyboard{
+    background: #1f1f1f;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin: 1rem auto;
-    width: 80%;
+    width: 90%;
 }
 
 .key{
     border: 2px solid pink;
-    border-radius: 50%;
+    border-radius: 25%;
+    box-shadow: 3px 2px 3px 2px rgba(200,150,150,0.7);
     font-size: 2rem;
     height: 3rem;
     line-height: 3rem;
@@ -62,25 +68,39 @@
 
 /*************************Media Queries*/
 @media screen and (min-width: 768px){
-    .person{
-        width: 45%;
+    .word-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 65%;
+        margin-right: 1rem;
+    }
+
+    .person-container{
+        width: 30%;
     }
 
     .keyboard{
         padding: 1rem;
-        width: 45%;
+        width: 90%;
     }
 
     .key{
         background: pink;
-        height: 50px;
-        width: 50px;
+        font-size: 2.5rem;
+        margin: .4rem;
     }
 }
 
 @media screen and (min-width: 992px){
   .game-container{
-      width: 65%;
+      padding: 2rem;
+      width: 90%;
+  }
+
+  .word-container{
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
   }
 
   .word{
@@ -92,5 +112,15 @@
     height: 4rem;
     line-height: 4rem;
     margin-bottom: 4rem;
+  }
+
+  .person{
+      margin-left: 1rem;
+      width: 30%;
+  }
+
+  .keyboard{
+      margin: 0  auto;
+      width: 80%;
   }
 }
