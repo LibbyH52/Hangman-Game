@@ -7,10 +7,10 @@ let letterPosition = [];
 let score = 0;
 let key = '';
 let letter = '';
-let blankDiv;
 let man = 0;
 
-const wordArray = ['princess', 'unicorn', 'fixes', 'zebras', 'airport', 'yaught', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridges', 'photograph', 'surfboard'];
+const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards',
+'carrot', 'parsnip', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon'];
 
 
 //removes any existing content in 'div.word'
@@ -31,12 +31,11 @@ const chooseRandomWord = () => {
 const printSpaces = () => {
     chooseRandomWord();
     for(let i=0; i< random.length; i++){
-        blankDiv = document.createElement('div');
+        let blankDiv = document.createElement('div');
         blankDiv.classList.add('blank');
         selectedWord.appendChild(blankDiv);
         randomArray.push(blankDiv);
     };
-    console.log(random);
 }
 
 const checkScore = () => {
@@ -61,10 +60,6 @@ const addLetter = () => {
             randomArray[letterPosition[j]].classList.add('letterColour');
             randomArray[letterPosition[j]].appendChild(letter);
             score=score+1;  
-            console.log(randomArray[letterPosition[j]])
-            console.log(randomArray);
-            console.log(randomArray.length)
-            console.log(score)
         }
     }
     checkScore();
