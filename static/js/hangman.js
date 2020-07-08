@@ -67,23 +67,23 @@ const addLetter = () => {
 startButton.addEventListener('click', ()  => {
         printSpaces();
 
-        //checks for presence of selected letter in the random word
-        const checkLetter = letterKeys.forEach(letterKey => {
-            letterKey.addEventListener("click", () => {
-            letterPosition = [];
-            key = letterKey.innerText;
-            if(random.includes(key)){
-                for(let i=0; i<random.length; i++){
-                    if(key === random[i]){
-                        letterPosition.push(i);
-                    }
-                } 
-                    addLetter();
-                } else {
-                    man += 1;
-                    alert("That letter is incorrect. Please choose another one!");
+//checks for presence of selected letter in the random word
+const checkLetter = letterKeys.forEach(letterKey => {
+    letterKey.addEventListener("click", () => {
+        letterPosition = [];
+        key = letterKey.innerText;
+        if(random.includes(key)){
+            for(let i=0; i<random.length; i++){
+                if(key === random[i]){
+                    letterPosition.push(i);
                 }
-            });
-        });  
+            } 
+                addLetter();
+            } else {
+                man += 1;
+                alert("That letter is incorrect. Please choose another one!");
+            }
+        });
+    });  
 });
 
