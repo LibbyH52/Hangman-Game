@@ -24,10 +24,30 @@
 }
 
 .person-container{
-    background: #1ff2f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 400px;
     margin: 0 auto;
     width: 90%;
+}
+
+.score{
+    font-size: 18px;
+    color: purple;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+#count{
+    display: inline-block;
+    color: darkgoldenrod;
+    font-size: 24px;
+    font-weight: bolder;
+    line-height: 36px;
+    height: 36px;
+    width: 36px;
+    text-align: center;
 }
 
 .keyboard{

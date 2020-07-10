@@ -1,13 +1,16 @@
 const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
-const letterKeys = document.querySelectorAll('.key')
+const letterKeys = document.querySelectorAll('.key');
+const result = document.querySelector('.score #count');
 let random = [];
 let randomArray = [];
 let letterPosition = [];
 let score = 0;
 let key = '';
 let letter = '';
-let man = 0;
+let len = 0;
+let man = 10;
+
 
 const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards',
 'carrot', 'parsnip', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon'];
@@ -39,11 +42,12 @@ const printSpaces = () => {
 }
 
 const checkScore = () => {
-    if(score === randomArray.length){
+    len = randomArray.length;
+    if(score === len){
         let word = random.join('');
         alert(`Well done the word was ${word}`); 
         window.location.reload();
-    } else if(man === 13){
+    } else if(man === 0){
         alert("You have had too many incorrect guesses. Game over!");
         window.location.reload();
     }
@@ -80,8 +84,11 @@ const checkLetter = letterKeys.forEach(letterKey => {
             } 
                 addLetter();
             } else {
-                man += 1;
-                alert("That letter is incorrect. Please choose another one!");
+                result.innerHTML = '';
+                man -= 1;
+                let hangman = document.createTextNode(man);
+                result.appendChild(hangman);
+                alert(`That letter is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
         });
     });  
