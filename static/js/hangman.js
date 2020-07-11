@@ -12,9 +12,10 @@ let len = 0;
 let man = 10;
 
 
-const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards',
-'carrot', 'parsnip', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon'];
+const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards', 'bananas',
+'carrot', 'parsnip', 'blackcurrants', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon', 'television', 'telephone', 'studio', 'visual', 'horoscope', 'nonesense', 'beautiful', 'picky', 'alphabet', 'pasta', 'helicopter', 'motorcycle', 'universal', 'bicycle', 'bathroom', 'bedroom', 'kitchen', 'cooker', 'saucepan', 'ketchup'];
 
+console.log(wordArray.length);
 
 //removes any existing content in 'div.word'
 const deleteWord = () => {
@@ -46,10 +47,8 @@ const checkScore = () => {
     if(score === len){
         let word = random.join('');
         alert(`Well done the word was ${word}`); 
-        window.location.reload();
     } else if(man === 0){
         alert("You have had too many incorrect guesses. Game over!");
-        window.location.reload();
     }
 }
 
@@ -60,6 +59,7 @@ const addLetter = () => {
             alert("you already selected that letter"); 
         } else {
             letter = document.createTextNode(key);
+            randomArray[letterPosition[j]].classList.remove('blank');
             randomArray[letterPosition[j]].classList.add('letterColour');
             randomArray[letterPosition[j]].appendChild(letter);
             score=score+1;  
