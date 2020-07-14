@@ -29,6 +29,7 @@ const chooseRandomWord = () => {
     //chooses random word from array
     let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     random = randomWord.split('');
+    console.log(random);
 }
 
 //prints empty boxes to the screen
@@ -55,13 +56,14 @@ const checkScore = () => {
 //adds class of letterColour to blankDiv 
 const addLetter = () => {
     for(let j=0; j<letterPosition.length; j++){
-        if(randomArray[letterPosition[j]].classList.contains('letterColour')) {
+        if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
         } else {
-            letter = document.createTextNode(key);
-            randomArray[letterPosition[j]].classList.remove('blank');
-            randomArray[letterPosition[j]].classList.add('letterColour');
-            randomArray[letterPosition[j]].appendChild(letter);
+            letter = document.createTextNode(key); 
+            let letterDiv = document.createElement('div');
+            randomArray[letterPosition[j]].appendChild(letterDiv);
+            letterDiv.classList.add('letterColour');
+            letterDiv.appendChild(letter);
             score=score+1;  
         }
     }
