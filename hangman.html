@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="static/css/hangman.css">
     <title>Hangman Game</title>
 </head>
 <body>
+    <header class="header">
+        <div class="heading">
+            <h1>Hangman</h1>
+        </div>
+        <div class="icons game-icon">
+            <a href="index.html"><span class="icon"><i class="fas fa-home"></i></span></a>
+            <a href="github.com" target="_blank"><span class="icon"><i class="fab fa-github"></i></span></a>
+            <a href="linkedin.com" target="_blank"><span class="icon"><i class="fab fa-linkedin-in"></i></span></a>
+            <a href="facebook.com" target="_blank"><span class="icon"><i class="fab fa-facebook-square"></i></span></a>
+        </div>
+    </header>
     <div class="game-btn">
         <button class="start-btn" type="button">Generate Word</button>
     </div>
@@ -16,7 +28,6 @@
     </div>
     <div class="game-container">
         <div class="person-container">
-            <div class="score">You have <span id="count"></span> guesses left</div>
             <canvas id="man" width="300" height="400"></canvas>
         </div>
         <div class="word-container">
