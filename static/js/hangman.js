@@ -5,6 +5,7 @@ const result = document.querySelector('.score #count');
 let random = [];
 let randomArray = [];
 let letterPosition = [];
+const chosenKeys = [];
 let score = 0;
 let key = '';
 let letter = '';
@@ -44,18 +45,19 @@ const printSpaces = () => {
 
 //keeps if the user has found all the letters or if the man has been fully drawn
 const checkScore = () => {
-    len = randomArray.length;
+    len = randomArray.length -1;
     let word = random.join('');
     if(score === len){
         alert(`Well done the word was ${word}`); 
+        window.location.reload();
     } else if(man <= 0){
         alert(`Game over! The word was ${word}`);
-    }
+        window.location.reload();
+    } 
 }
 
 //adds class of letterColour to blankDiv. Gives appearance of writing correct letter in blank space
 const addLetter = () => {
-    checkScore();
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
@@ -68,6 +70,7 @@ const addLetter = () => {
             score=score+1; 
         }
     }
+    checkScore();
 }
 
 startButton.addEventListener('click', ()  => {
