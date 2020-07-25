@@ -70,24 +70,23 @@
     align-items: center;
     justify-content: center;
     margin: 1rem auto;
-    width: 90%;
+    width: 95%;
 }
 
 .key{
     border: 2px solid pink;
     border-radius: 25%;
-    box-shadow: 3px 2px 3px 2px rgba(200,150,150,0.7);
-    font-size: 2rem;
-    height: 3rem;
-    line-height: 3rem;
-    margin: .2rem;
+    font-size: 1.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin: .2rem .1rem;
     text-align: center;
-    width: 3rem;
+    width: 2rem;
     color: #f1f1f1;
 }
 
 .empty{
-    width: 3rem;
+    width: 1rem;
 }
 
 .chosen{
@@ -114,8 +113,8 @@
     .word-container{
         display: flex;
         flex-wrap: wrap;
-        width: 65%;
-        margin-right: 1rem;
+        width: 85%;
+        margin: 0 auto;
     }
 
     .person-container{
@@ -123,14 +122,38 @@
     }
 
     .keyboard{
-        padding: 1rem;
-        width: 90%;
+        margin: 2rem auto;
+        padding: 1rem .5rem;
+        width: 85%;
     }
 
     .key{
         background: pink;
-        font-size: 2.5rem;
-        margin: .4rem;
+        box-shadow: 3px 2px 3px 2px rgba(200,150,150,0.7);
+        height: 2.5rem;
+        line-height: 2.5rem;
+        width: 2.5rem;
+        font-size: 2rem;
+        margin: .2rem;
+    }
+
+    .empty{
+        width: 2rem;
+    }
+}
+
+/***********************************Media Query for iPad Pro and Google Nexus Tablet*/
+@media screen and (min-width: 769px) and (max-width: 810px){
+    /******************Nexus 10*/
+    .keyboard{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 992px){
+    /*******************iPad Pro 10.5*/
+    .keyboard{
+        width: 75%;
     }
 }
 
