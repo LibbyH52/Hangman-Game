@@ -10,13 +10,11 @@ let key = '';
 let letter = '';
 let len = 0;
 let man = 10;
-let word = random.join('');
 
 
 const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards', 'bananas',
 'carrot', 'parsnip', 'blackcurrants', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon', 'television', 'telephone', 'studio', 'visual', 'horoscope', 'nonesense', 'beautiful', 'picky', 'alphabet', 'pasta', 'helicopter', 'motorcycle', 'universal', 'bicycle', 'bathroom', 'bedroom', 'kitchen', 'cooker', 'saucepan', 'ketchup'];
 
-console.log(wordArray.length);
 
 //removes any existing content in 'div.word'
 const deleteWord = () => {
@@ -44,30 +42,32 @@ const printSpaces = () => {
     };
 }
 
+//keeps if the user has found all the letters or if the man has been fully drawn
 const checkScore = () => {
     len = randomArray.length;
+    let word = random.join('');
     if(score === len){
         alert(`Well done the word was ${word}`); 
-    } else if(man === 0){
-        alert("You have had too many incorrect guesses. Game over!");
+    } else if(man <= 0){
+        alert(`Game over! The word was ${word}`);
     }
 }
 
-//adds class of letterColour to blankDiv 
+//adds class of letterColour to blankDiv. Gives appearance of writing correct letter in blank space
 const addLetter = () => {
+    checkScore();
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
         } else {
-            letter = document.createTextNode(key); 
             let letterDiv = document.createElement('div');
+            letter = document.createTextNode(key); 
             randomArray[letterPosition[j]].appendChild(letterDiv);
             letterDiv.classList.add('letterColour');
             letterDiv.appendChild(letter);
-            score=score+1;  
+            score=score+1; 
         }
     }
-    checkScore();
 }
 
 startButton.addEventListener('click', ()  => {
@@ -78,6 +78,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
     letterKey.addEventListener("click", () => {
         letterPosition = [];
         key = letterKey.innerText;
+        letterKey.classList.add('chosen');
         if(random.includes(key)){
             for(let i=0; i<random.length; i++){
                 if(key === random[i]){
@@ -85,15 +86,13 @@ const checkLetter = letterKeys.forEach(letterKey => {
                 }
             } 
                 addLetter();
-            } else if(man=== 0) {
-                    alert(`Game Over. The word was ${word}`)
             } else {
                 result.innerHTML = '';
                 man -= 1;
                 drawMan();
                 let hangman = document.createTextNode(man);
                 result.appendChild(hangman);
-                alert(`That letter is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
+                alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
         });
     }); 
@@ -161,8 +160,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
             ctx.arc(125, 145, 15, 0, Math.PI, true);
             ctx.stroke();
             ctx.closePath();
-        } 
-        else if (man === 0){
+        } else if (man === 0){
             var ctx = canvas.getContext('2d');
             ctx.beginPath();
             ctx.arc(110, 105, 5, 0, Math.PI*2, true);
@@ -174,6 +172,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
             ctx.stroke();
             ctx.closePath();
         }
+        checkScore();
     }
 });
 
