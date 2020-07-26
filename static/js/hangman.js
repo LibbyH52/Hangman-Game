@@ -45,7 +45,7 @@ const printSpaces = () => {
 
 //keeps if the user has found all the letters or if the man has been fully drawn
 const checkScore = () => {
-    len = randomArray.length -1;
+    len = randomArray.length;
     let word = random.join('');
     if(score === len){
         alert(`Well done the word was ${word}`); 
@@ -90,11 +90,8 @@ const checkLetter = letterKeys.forEach(letterKey => {
             } 
                 addLetter();
             } else {
-                result.innerHTML = '';
                 man -= 1;
                 drawMan();
-                let hangman = document.createTextNode(man);
-                result.appendChild(hangman);
                 alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
         });
