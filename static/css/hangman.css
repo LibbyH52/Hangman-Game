@@ -1,17 +1,36 @@
+.header{
+    background: #003f5c;
+    display: grid;
+    grid-template-columns: 12fr;
+}
+
+.heading{
+    color: #f1f1f1;
+    font-size: 1.5rem;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    color: #f1f1f1;
+    margin: 0 0.5rem;
+}
+
 .game-container{
-    background: #f1f1f1;
+    background: url('../img/brain.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 100%;
 }
 
-.game-btn, 
-.heading{
-    padding: 3rem;
-    color: purple;
-}
 
 .word-container{
     display:flex;
@@ -41,29 +60,18 @@
 }
 
 #man{
-    border: 2px solid purple;
+    border: 2px solid #003f5c;
 }
 
 .score{
     font-size: 18px;
-    color: purple;
+    color: #003f5c;
     font-weight: bold;
     line-height: 50px;
 }
 
-#count{
-    display: inline-block;
-    color: darkgoldenrod;
-    font-size: 24px;
-    font-weight: bolder;
-    line-height: 36px;
-    height: 36px;
-    width: 36px;
-    text-align: center;
-}
-
 .keyboard{
-    background: #1f1f1f;
+    background:#58508d;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -74,9 +82,11 @@
 }
 
 .key{
-    border: 2px solid pink;
+    background: #003f5c;
+    border: 2px solid #bc5090;
     border-radius: 25%;
     font-size: 1.5rem;
+    font-weight: bold;
     height: 2rem;
     line-height: 2rem;
     margin: .2rem .1rem;
@@ -90,8 +100,8 @@
 }
 
 .chosen{
-    box-shadow: none;
-    border-color: black;
+    background: black;
+    /* border-color: black; */
 }
 
 .blank{
@@ -110,6 +120,20 @@
  
 /*************************Media Queries*/
 @media screen and (min-width: 768px){
+    .header{
+        grid-template-columns: 6fr 6fr;
+    }
+
+    .heading{
+        padding-left: 1rem;
+    }
+
+    .icons{
+        font-size: 2rem;
+        justify-content: flex-end;
+        padding: 2rem;
+    }
+
     .word-container{
         display: flex;
         flex-wrap: wrap;
@@ -122,14 +146,17 @@
     }
 
     .keyboard{
+        border-top-right-radius: 2%;
+        border-bottom-left-radius: 2%;
+        border-bottom-left-radius: 15%;
+        border-bottom-right-radius: 15%;
         margin: 2rem auto;
         padding: 1rem .5rem;
         width: 85%;
     }
 
     .key{
-        background: pink;
-        box-shadow: 3px 2px 3px 2px rgba(200,150,150,0.7);
+        box-shadow: 3px 2px 3px 2px #bc5090;
         height: 2.5rem;
         line-height: 2.5rem;
         width: 2.5rem;
@@ -139,6 +166,10 @@
 
     .empty{
         width: 2rem;
+    }
+
+    .chosen{
+        box-shadow: none;
     }
 }
 
@@ -157,11 +188,15 @@
     }
 }
 
-@media screen and (min-width: 992px){
-  .game-container{
-      padding: 2rem;
-      width: 90%;
-  }
+@media screen and (min-width: 992px){    
+    .icons{
+        margin-right: 0;
+    }
+
+    .game-container{
+        padding: 2rem;
+        width: 90%;
+    }
 
   .word-container{
       display: flex;
@@ -187,6 +222,15 @@
 
   .keyboard{
       margin: 0  auto;
-      width: 95%;
+      width: 85%;
   }
+
+    .key{
+        font-size: 2rem;
+        height: 3rem;
+        line-height: 3rem;
+        margin: .25rem;
+        text-align: center;
+        width: 3rem;
+    }
 }
