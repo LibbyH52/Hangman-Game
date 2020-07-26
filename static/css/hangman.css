@@ -1,5 +1,9 @@
+body{
+    padding: 0;
+}
+
 .header{
-    background: #003f5c;
+    background: #488f31;
     display: grid;
     grid-template-columns: 12fr;
 }
@@ -22,13 +26,13 @@
 }
 
 .game-container{
-    background: url('../img/brain.jpg') center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background: url('../img/brain.jpg') no-repeat center; */
+    background: #bad0af;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
+    padding: 3rem 0;
+    width: 100vw;
 }
 
 
@@ -70,7 +74,8 @@
 }
 
 .keyboard{
-    background:#58508d;
+    background: #de425b;
+    border: 2px solid black;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -81,8 +86,8 @@
 }
 
 .key{
-    background: #003f5c;
-    border: 2px solid #bc5090;
+    background: #ec838a;
+    border: 2px solid #de425b;
     border-radius: 25%;
     font-size: 1.5rem;
     font-weight: bold;
@@ -91,7 +96,7 @@
     margin: .2rem .1rem;
     text-align: center;
     width: 2rem;
-    color: #f1f1f1;
+    color: black;
 }
 
 .empty{
@@ -154,7 +159,7 @@
     }
 
     .key{
-        box-shadow: 3px 2px 3px 2px #bc5090;
+        box-shadow: 3px 3px 3px 3px #f3babc;
         height: 2.5rem;
         line-height: 2.5rem;
         width: 2.5rem;
@@ -192,8 +197,8 @@
     }
 
     .game-container{
-        padding: 2rem;
-        width: 90%;
+        margin: 0;
+        width: 100%;
     }
 
   .word-container{
@@ -219,15 +224,15 @@
   }
 
   .keyboard{
-      margin: 0  auto;
-      width: 85%;
+      margin: 0 auto;
+      width: 80%;
   }
 
     .key{
         font-size: 2rem;
         height: 3rem;
         line-height: 3rem;
-        margin: .25rem;
+        margin: .3rem;
         text-align: center;
         width: 3rem;
     }
