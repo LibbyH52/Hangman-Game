@@ -1,10 +1,10 @@
 const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key');
 const result = document.querySelector('.score #count');
+let randomWord = '';
 let random = [];
 let randomArray = [];
 let letterPosition = [];
-const chosenKeys = [];
 let score = 0;
 let key = '';
 let letter = '';
@@ -26,7 +26,7 @@ const chooseRandomWord = () => {
     //deletes any word currently on screen
     deleteWord();
     //chooses random word from array
-    let randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     random = randomWord.split('');
     console.log(random);
 }
@@ -34,6 +34,8 @@ const chooseRandomWord = () => {
 //prints empty boxes to the screen
 const printSpaces = () => {
     chooseRandomWord();
+    score = 0;
+    man = 10;
     checkLetter;
     for(let i=0; i< random.length; i++){
         let blankDiv = document.createElement('div');
@@ -43,22 +45,33 @@ const printSpaces = () => {
     };
 }
 
-//keeps if the user has found all the letters or if the man has been fully drawn
+const playAgain = () => {
+    confirm("Do you want to play another game? ");
+    if(confirm){
+        console.log(wordArray.length);
+        wordArray.splice(wordArray.indexOf(randomWord), 1);
+        letterKeys.forEach(letterKey => {
+            letterKey.classList.remove('chosen');
+        });
+        printSpaces();
+    }
+}
+
+//checks if the user has found all the letters or if the man has been fully drawn
 const checkScore = () => {
     len = randomArray.length;
     let word = random.join('');
     if(score === len){
         alert(`Well done the word was ${word}`); 
-        window.location.reload();
+        playAgain();
     } else if(man <= 0){
         alert(`Game over! The word was ${word}`);
-        window.location.reload();
+        playAgain();
     } 
 }
 
 //adds class of letterColour to blankDiv. Gives appearance of writing correct letter in blank space
 const addLetter = () => {
-    console.log(randomArray.length);
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
@@ -74,9 +87,6 @@ const addLetter = () => {
     console.log(score);
     checkScore();
 }
-
-// startButton.addEventListener('click', ()  => {
-//         printSpaces();
 
 //checks for presence of selected letter in the random word
 const checkLetter = letterKeys.forEach(letterKey => {
@@ -94,13 +104,12 @@ const checkLetter = letterKeys.forEach(letterKey => {
             } else {
                 man -= 1;
                 drawMan();
-                alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
+                //alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
-        //});
     }); 
     
     const drawMan = () => {
-        let canvas = document.querySelector('#man');         
+        let canvas = document.querySelector('#man'); 
         if(man === 9){
             var ctx = canvas.getContext('2d');
             ctx.beginPath();
