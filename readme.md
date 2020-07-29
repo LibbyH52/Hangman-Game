@@ -11,6 +11,7 @@ Simple game of hangman developed for children. It's my first time developing a g
 
 ### Features Left to Implement
 * Aditional styling and colouring
+* Allow user to choose to play again and keep track of games won/ lost
 
 ## Acknowledgements
 ### Conent
