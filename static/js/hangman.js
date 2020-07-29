@@ -70,7 +70,7 @@ const addLetter = () => {
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
-        } else if(!randomArray[letterPosition[j]].hasChildNodes() || man === 0) {
+        } else {
             let letterDiv = document.createElement('div');
             letter = document.createTextNode(key); 
             randomArray[letterPosition[j]].appendChild(letterDiv);
@@ -98,7 +98,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
             } else {
                 man -= 1;
                 drawMan();
-                //alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
+                alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
     }); 
     
