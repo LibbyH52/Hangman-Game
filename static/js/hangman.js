@@ -1,4 +1,3 @@
-const startButton = document.querySelector('.start-btn');
 const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key');
 const result = document.querySelector('.score #count');
@@ -35,6 +34,7 @@ const chooseRandomWord = () => {
 //prints empty boxes to the screen
 const printSpaces = () => {
     chooseRandomWord();
+    checkLetter;
     for(let i=0; i< random.length; i++){
         let blankDiv = document.createElement('div');
         blankDiv.classList.add('blank');
@@ -58,6 +58,7 @@ const checkScore = () => {
 
 //adds class of letterColour to blankDiv. Gives appearance of writing correct letter in blank space
 const addLetter = () => {
+    console.log(randomArray.length);
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
@@ -70,11 +71,12 @@ const addLetter = () => {
             score=score+1; 
         }
     }
+    console.log(score);
     checkScore();
 }
 
-startButton.addEventListener('click', ()  => {
-        printSpaces();
+// startButton.addEventListener('click', ()  => {
+//         printSpaces();
 
 //checks for presence of selected letter in the random word
 const checkLetter = letterKeys.forEach(letterKey => {
@@ -94,7 +96,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
                 drawMan();
                 alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
-        });
+        //});
     }); 
     
     const drawMan = () => {
@@ -176,3 +178,4 @@ const checkLetter = letterKeys.forEach(letterKey => {
     }
 });
 
+printSpaces();
