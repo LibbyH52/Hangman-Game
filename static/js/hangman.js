@@ -48,12 +48,7 @@ const printSpaces = () => {
 const playAgain = () => {
     confirm("Do you want to play another game? ");
     if(confirm){
-        console.log(wordArray.length);
-        wordArray.splice(wordArray.indexOf(randomWord), 1);
-        letterKeys.forEach(letterKey => {
-            letterKey.classList.remove('chosen');
-        });
-        printSpaces();
+        window.location.reload();
     }
 }
 
@@ -75,7 +70,7 @@ const addLetter = () => {
     for(let j=0; j<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
-        } else {
+        } else if(!randomArray[letterPosition[j]].hasChildNodes() || man === 0) {
             let letterDiv = document.createElement('div');
             letter = document.createTextNode(key); 
             randomArray[letterPosition[j]].appendChild(letterDiv);
@@ -84,7 +79,6 @@ const addLetter = () => {
             score=score+1; 
         }
     }
-    console.log(score);
     checkScore();
 }
 
