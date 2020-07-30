@@ -63,7 +63,7 @@ const checkScore = () => {
     if(score === len){
         alert(`Well done the word was ${word}`); 
         playAgain();
-    } else if(man <= 0){
+    } else if(man === 0){
         alert(`Game over! The word was ${word}`);
         updateWord();
         playAgain();
