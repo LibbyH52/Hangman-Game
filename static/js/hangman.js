@@ -61,13 +61,14 @@ const checkScore = () => {
         playAgain();
     } else if(man <= 0){
         alert(`Game over! The word was ${word}`);
-        playAgain();
+        updateWord();
+        //playAgain();
     } 
 }
 
 //adds class of letterColour to blankDiv. Gives appearance of writing correct letter in blank space
 const addLetter = () => {
-    for(let j=0; j<letterPosition.length; j++){
+    for(let i=0; i<letterPosition.length; j++){
         if(randomArray[letterPosition[j]].hasChildNodes()) {
             alert("you already selected that letter"); 
         } else {
@@ -80,6 +81,22 @@ const addLetter = () => {
         }
     }
     checkScore();
+}
+
+//completes the word if Game Over!
+const updateWord = () => {
+    for(let i=0; i<randomArray.length; i++){
+        for(let j=0; j<random.length; j++){
+            if(!randomArray[i].hasChildNodes()){
+                let letterDiv = document.createElement('div');
+                letter = document.createTextNode(random[i]);
+                console.log(letter); 
+                randomArray[i].appendChild(letterDiv);
+                letterDiv.classList.add('letterColour');
+                letterDiv.appendChild(letter);
+            }
+        }
+    }
 }
 
 //checks for presence of selected letter in the random word
