@@ -110,7 +110,8 @@ const checkLetter = letterKeys.forEach(letterKey => {
             ctx.moveTo(149,24);
             ctx.lineTo(149,100);
             ctx.stroke();
-            ctx.closePath();} else 
+            ctx.closePath();
+        } else 
         if(man === 7){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
