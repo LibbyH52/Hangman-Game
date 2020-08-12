@@ -96,84 +96,96 @@ const checkLetter = letterKeys.forEach(letterKey => {
         if(man === 9){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(10,25);
-            ctx.lineTo(125,25);
+            ctx.moveTo(50,25);
+            ctx.lineTo(150,25);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 8){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,25);
-            ctx.lineTo(125,75);
+            ctx.moveTo(149,24);
+            ctx.lineTo(149,100);
             ctx.stroke();
             ctx.closePath();} else 
         if(man === 7){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.arc(125, 115, 40, 0, Math.PI * 2, true);
+            ctx.arc(150, 150, 50, 0, Math.PI * 2, true);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 6){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,155);
-            ctx.lineTo(125,255);
+            ctx.moveTo(150,200);
+            ctx.lineTo(150,330);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 5){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,255);
-            ctx.lineTo(85,305);
+            ctx.moveTo(150,330);
+            ctx.lineTo(85,400);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 4){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,255);
-            ctx.lineTo(165,305);
+            ctx.moveTo(150,330);
+            ctx.lineTo(215,400);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 3){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,175);
-            ctx.lineTo(165,205);
+            ctx.moveTo(150,235);
+            ctx.lineTo(210,185);
             ctx.stroke();
             ctx.closePath();
         } else if(man === 2){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.moveTo(125,175);
-            ctx.lineTo(85,205);
+            ctx.moveTo(150,235);
+            ctx.lineTo(90,185);
             ctx.stroke();
             ctx.closePath();} 
         else if(man === 1){
             var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.arc(110, 105, 5, 0, Math.PI*2, true);
-            ctx.stroke();
+            ctx.arc(130, 135, 5, 0, Math.PI*2, true);
+            ctx.fillStyle = "#de425b";
+            ctx.fill();
             ctx.closePath();
         
-            ctx.strokeStyle = "#de425b";
+            ctx.fillStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.arc(140, 105, 5, 0, Math.PI*2, true);
-            ctx.stroke();
+            ctx.arc(170, 135, 5, 0, Math.PI*2, true);
+            ctx.fillStyle = "#de425b";
+            ctx.fill();
             ctx.closePath();
         } else if (man === 0){
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
+            ctx.lineWidth = 4;
             ctx.beginPath();
-            ctx.arc(125, 145, 15, 0, Math.PI, true);
+            ctx.arc(150, 175, 20, 0, Math.PI, true);
             ctx.stroke();
             ctx.closePath();
         }
