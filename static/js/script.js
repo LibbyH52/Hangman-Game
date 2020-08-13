@@ -50,8 +50,8 @@ const printSpaces = () => {
 }
 
 const playAgain = () => {
-    confirm("Do you want to play another game? ");
-    if(confirm){
+    let newGame = confirm("Do you want to play another game? ");
+    if(newGame){
         document.location.reload();
     }
 }
