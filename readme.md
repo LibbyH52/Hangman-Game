@@ -15,3 +15,5 @@ The code for adding a class at specific index first answer [here](https://stacko
 Used [this tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) to help draw the man. 
 
 The background image is by [chenspec](https://pixabay.com/illustrations/brain-mind-light-bulb-bulb-5431134/) and was found on pixabay.
+
+The code to delete the hangman and get ready for a new game was copied from [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect)
