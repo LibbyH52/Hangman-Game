@@ -66,8 +66,8 @@ const checkScore = () => {
         alert(`Well done the word was ${word}`); 
         playAgain();
     } else if(man === 0){
-        alert(`Game over! The word was ${word}`);
         updateWord();
+        alert(`Game over! The word was ${word}`);
         playAgain();
     } 
 }
@@ -75,133 +75,132 @@ const checkScore = () => {
 //if letterKey is in the random word the letter(s) are pushed in to an array and the addLetter function is called. 
 const checkLetter = letterKeys.forEach(letterKey => {
     letterKey.addEventListener("click", () => {
-        letterPosition = [];
-        key = letterKey.innerText;
-        letterKey.classList.add('chosen');
-        if(random.includes(key)){
-            for(let i=0; i<random.length; i++){
-                if(key === random[i]){
-                    letterPosition.push(i);
-                }
-            } 
-                addLetter();
-            } else {
-                man -= 1;
-                drawMan();
+    letterPosition = [];
+    key = letterKey.innerText;
+    letterKey.classList.add('chosen');
+    if(random.includes(key)){
+        for(let i=0; i<random.length; i++){
+            if(key === random[i]){
+                letterPosition.push(i);
+            }
+        } 
+        addLetter();
+        } else {
+            man -= 1;
+            drawMan();
+            if(man !== 10){
                 alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
-            console.log(man);
-    }); 
-    
-    //starts drawing the hangman if wrong key is selected
-    const drawMan = () => {
-        let canvas = document.querySelector('#man'); 
-        if(man === 9){
-            console.log(man);
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(50,25);
-            ctx.lineTo(150,25);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 8){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(149,24);
-            ctx.lineTo(149,100);
-            ctx.stroke();
-            ctx.closePath();
-        } else 
-        if(man === 7){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(150, 150, 50, 0, Math.PI * 2, true);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 6){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(150,200);
-            ctx.lineTo(150,330);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 5){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(150,330);
-            ctx.lineTo(85,400);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 4){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(150,330);
-            ctx.lineTo(215,400);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 3){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(150,235);
-            ctx.lineTo(210,185);
-            ctx.stroke();
-            ctx.closePath();
-        } else if(man === 2){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(150,235);
-            ctx.lineTo(90,185);
-            ctx.stroke();
-            ctx.closePath();} 
-        else if(man === 1){
-            var ctx = canvas.getContext('2d');
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(130, 135, 5, 0, Math.PI*2, true);
-            ctx.fillStyle = "#de425b";
-            ctx.fill();
-            ctx.closePath();
-        
-            ctx.fillStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(170, 135, 5, 0, Math.PI*2, true);
-            ctx.fillStyle = "#de425b";
-            ctx.fill();
-            ctx.closePath();
-        } else if (man === 0){
-            var ctx = canvas.getContext('2d');
-            ctx.strokeStyle = "#de425b";
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(150, 175, 20, 0, Math.PI, true);
-            ctx.stroke();
-            ctx.closePath();
         }
-        checkScore();
+    });
+}); 
+    
+//starts drawing the hangman if wrong key is selected
+const drawMan = () => {
+    let canvas = document.querySelector('#man'); 
+    if(man === 9){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(50,25);
+        ctx.lineTo(150,25);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 8){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(149,24);
+        ctx.lineTo(149,100);
+        ctx.stroke();
+        ctx.closePath();
+    } else 
+    if(man === 7){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(150, 150, 50, 0, Math.PI * 2, true);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 6){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(150,200);
+        ctx.lineTo(150,330);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 5){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(150,330);
+        ctx.lineTo(85,400);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 4){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(150,330);
+        ctx.lineTo(215,400);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 3){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(150,235);
+        ctx.lineTo(210,185);
+        ctx.stroke();
+        ctx.closePath();
+    } else if(man === 2){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(150,235);
+        ctx.lineTo(90,185);
+        ctx.stroke();
+        ctx.closePath();} 
+    else if(man === 1){
+        var ctx = canvas.getContext('2d');
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(130, 135, 5, 0, Math.PI*2, true);
+        ctx.fillStyle = "#de425b";
+        ctx.fill();
+        ctx.closePath();
+    
+        ctx.fillStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(170, 135, 5, 0, Math.PI*2, true);
+        ctx.fillStyle = "#de425b";
+        ctx.fill();
+        ctx.closePath();
+    } else if (man === 0){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "#de425b";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(150, 175, 20, 0, Math.PI, true);
+        ctx.stroke();
+        ctx.closePath();
     }
-});
+    checkScore();
+};
 
 //fills in letter(s) at corresponding index in randomArray 
 const addLetter = () => {
     for(let i=0; i<letterPosition.length; i++){
-        console.log(randomArray);
         if(randomArray[letterPosition[i]].hasChildNodes()) {
             alert("you already selected that letter"); 
         } else {
@@ -223,7 +222,6 @@ const updateWord = () => {
             if(!randomArray[i].hasChildNodes()){
                 let letterDiv = document.createElement('div');
                 letter = document.createTextNode(random[i]);
-                console.log(letter); 
                 randomArray[i].appendChild(letterDiv);
                 letterDiv.classList.add('letterColour');
                 letterDiv.appendChild(letter);
