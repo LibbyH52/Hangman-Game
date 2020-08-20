@@ -30,7 +30,7 @@ const chooseRandomWord = () => {
     //chooses random word from array
     randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     random = randomWord.split('');
-    console.log(random);
+    wordArray.splice(wordArray.indexOf(randomWord), 1);
 }
 
 //prints empty boxes to the screen
@@ -52,8 +52,10 @@ const printSpaces = () => {
 const playAgain = () => {
     let newGame = confirm("Do you want to play another game? ");
     if(newGame){
-        document.location.reload();
-    }
+        randomArray = [];
+        clearMan();
+        printSpaces();
+    } 
 }
 
 //checks if the user has found all the letters or if the man has been fully drawn
@@ -88,12 +90,14 @@ const checkLetter = letterKeys.forEach(letterKey => {
                 drawMan();
                 alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
             }
+            console.log(man);
     }); 
     
     //starts drawing the hangman if wrong key is selected
     const drawMan = () => {
         let canvas = document.querySelector('#man'); 
         if(man === 9){
+            console.log(man);
             var ctx = canvas.getContext('2d');
             ctx.strokeStyle = "#de425b";
             ctx.lineWidth = 4;
@@ -197,6 +201,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
 //fills in letter(s) at corresponding index in randomArray 
 const addLetter = () => {
     for(let i=0; i<letterPosition.length; i++){
+        console.log(randomArray);
         if(randomArray[letterPosition[i]].hasChildNodes()) {
             alert("you already selected that letter"); 
         } else {
@@ -225,6 +230,13 @@ const updateWord = () => {
             }
         }
     }
+}
+
+//deletes the drawing and clears the canvas. Code copied from here: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
+const clearMan = () => {
+    let remove = document.querySelector('#man');
+    const ctx = remove.getContext('2d');
+    ctx.clearRect(0, 0, remove.width, remove.height);
 }
 
 printSpaces();
