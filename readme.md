@@ -1,12 +1,23 @@
 # Hangman Game
 
-Simple game of hangman developed for children. It's my first time developing a game solo, so any tips/ suggestions/ constructive criticism are always very much appreciated. I am uploading it as I go along for testing purposes.  
+Simple game of hangman developed for children. It's my first time developing a game solo, so constructive criticism would be very much appreciated. I am uploading it as I go along for testing purposes.  
 
-### Features Left to Implement
-* Aditional styling and colouring
-* Allow user to choose to play again and keep track of games won/ lost
+## Features
+* canvas for drawing the hangman, part of man is drawn with each incorrect guess
+* dashes to signify the number of letters in the random word.
+* keyboard with eventListeners added to each key for choosing letters
+* popup alerts to let the user know if their guess was incorrect
+
+#### Features Left to Implement
+* reading words in from an API (not decided yet)
+
+## Technologies Used
+* HTML5
+* CSS3 (gird and Flexbox) for structuring and styling
+* JavaScript for creating the functionality of the game
 
 ## Acknowledgements
+
 ### Conent
 Code for choosing a random word from the array was found on [stackoverflow](https://stackoverflow.com/questions/42211863/pick-a-random-item-from-a-javascript-array) 3rd answer.
 
