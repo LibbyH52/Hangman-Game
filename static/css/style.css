@@ -26,7 +26,6 @@ body{
 }
 
 .game-container{
-    /* background: url('../img/brain.jpg') no-repeat center; */
     background: #bad0af;
     display: flex;
     flex-direction: row;
@@ -76,24 +75,28 @@ body{
 .keyboard{
     background: #de425b;
     border: 2px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     margin: 1rem auto;
     width: 95%;
+    max-width: 95%;
+    padding: 1rem 0;
+}
+
+.keyboard-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .key{
-    background: #ec838a;
-    border: 2px solid #de425b;
-    border-radius: 25%;
-    font-size: 1.5rem;
+    border: 1px solid #ec838a;
+    font-size: 1.75rem;
     font-weight: bold;
     height: 2rem;
     line-height: 2rem;
-    margin: .2rem .1rem;
+    margin: .4rem .25rem;
     text-align: center;
     width: 2rem;
     color: black;
@@ -160,9 +163,13 @@ body{
     }
 
     .key{
+        background: #ec838a;
+        border: 1px solid #ec838a;
+        border-radius: 25%;
         box-shadow: 3px 3px 3px 3px #f3babc;
         height: 2.5rem;
         line-height: 2.5rem;
+        margin: .2rem .1rem;
         width: 2.5rem;
         font-size: 2rem;
         margin: .2rem;
