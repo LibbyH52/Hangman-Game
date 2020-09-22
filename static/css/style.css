@@ -114,13 +114,13 @@ body{
 .blank{
     border-bottom: 1px solid #003f5c;
     height: 3rem;
-    margin: 8px;
-    width: 3rem;
+    margin: 2rem .2rem;
+    width: 2rem;
 }
  
 .letterColour{
     color: #58508d;
-    font-size: 2.5rem;
+    font-size: 2rem;
     animation-name: backInUp;
     animation-duration: .5s;
 }
@@ -148,8 +148,20 @@ body{
         margin: 0 auto;
     }
 
+    .blank{
+        font-size: 4rem;
+        height: 3rem;
+        line-height: 3rem;
+        margin-bottom: 4rem;
+        width: 3rem;
+      }
+
+    .letterColor{
+        font-size: 4rem;
+    }
+
     .person-container{
-        width: 30%;
+        width: 60%;
     }
 
     .keyboard{
@@ -159,7 +171,7 @@ body{
         border-bottom-right-radius: 15%;
         margin: 2rem auto;
         padding: 1rem .5rem;
-        width: 85%;
+        width: 90%;
     }
 
     .key{
@@ -172,7 +184,7 @@ body{
         margin: .2rem .1rem;
         width: 2.5rem;
         font-size: 2rem;
-        margin: .2rem;
+        margin: .4rem;
     }
 
     .empty{
@@ -226,7 +238,7 @@ body{
     margin-bottom: 4rem;
   }
 
-  .person{
+  .person-container{
       margin-left: 1rem;
       width: 30%;
   }
