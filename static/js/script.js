@@ -67,8 +67,11 @@ const checkScore = () => {
         playAgain();
     } else if(man === 0){
         updateWord();
-        alert(`Game over! The word was ${word}`);
-        playAgain();
+        //delay alert until word updates
+        setTimeout(() => {
+            alert(`Game over! The word was ${word}`);
+            playAgain();
+        }, 1000);
     } 
 }
 
@@ -198,7 +201,7 @@ const drawMan = () => {
     checkScore();
 };
 
-//fills in letter(s) at corresponding index in randomArray 
+//fill in letter(s) at corresponding index in randomArray 
 const addLetter = () => {
     for(let i=0; i<letterPosition.length; i++){
         if(randomArray[letterPosition[i]].hasChildNodes()) {
@@ -212,7 +215,10 @@ const addLetter = () => {
             score=score+1; 
         }
     }
-    checkScore();
+    //delay caling check score until letter is added
+    setTimeout(() => {
+        checkScore();
+    }, 750);
 }
 
 //completes the word if Game Over!
