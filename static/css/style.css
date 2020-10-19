@@ -193,6 +193,7 @@ body{
 
     .chosen{
         box-shadow: none;
+        color: black;
     }
 }
 
