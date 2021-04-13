@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
     padding: 0;
 }
@@ -32,6 +37,7 @@ body{
     flex-wrap: wrap;
     padding: 3rem 0;
     width: 100vw;
+    position: relative;
 }
 
 
@@ -124,6 +130,90 @@ body{
     animation-name: backInUp;
     animation-duration: .5s;
 }
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 50;
+}
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 35%;
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #bad0af;
+    padding-bottom: 1rem;
+    z-index: 150;
+}
+
+.popup-header{
+    background: #488f31;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+}
+
+.popup-heading{
+    font-size: 2rem;
+    color: #f1f1f1;
+    text-transform: uppercase;
+}
+
+.popup-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.popup-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-btn{
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(10,10,10,.5);
+    font-weight: 600;
+    font-variant: small-caps;
+    padding: .5rem 2rem;
+}
+
+.btn-play{
+    background: #de425b;
+    border: 2px solid #f1f1f1;
+    color: #f1f1f1;
+}
+
+.btn-quit{
+    background: #f1f1f1;
+    border: 2px solid #de425b;
+    color: #de425b;
+}
+
+.popup-btn:hover{
+    box-shadow: 2px 2px 4px #000;
+}
+
  
 /*************************Media Queries*/
 @media screen and (min-width: 768px){
