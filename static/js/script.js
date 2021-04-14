@@ -1,6 +1,15 @@
 const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key');
 const result = document.querySelector('.score #count');
+
+const overlay= document.querySelector('#overlay');
+const popup = document.querySelector('.popup');
+const popupWord = document.querySelector('.popup-word');
+const popupHeading = document.querySelector('.popup-heading');
+const playBtn = document.querySelector('.btn-play');
+const quitBtn = document.querySelector('.btn-quit');
+
+
 let randomWord = '';
 let random = [];
 let randomArray = [];
@@ -49,29 +58,37 @@ const printSpaces = () => {
     };
 }
 
-const playAgain = () => {
-    let newGame = confirm("Do you want to play another game? ");
-    if(newGame){
-        randomArray = [];
-        clearMan();
-        printSpaces();
-    } 
+//hides the popup and opaque overlay. 
+const addHide = () => {
+    overlay.classList.add('hide');
+    popup.classList.add('hide');
 }
 
-//checks if the user has found all the letters or if the man has been fully drawn
+quitBtn.addEventListener('click', () => {
+    addHide();
+})
+
+playBtn.addEventListener('click', () =>{
+    addHide();
+    randomArray = [];
+    clearMan();
+    printSpaces();
+});
+
+
 const checkScore = () => {
     len = randomArray.length;
     let word = random.join('');
-    if(score === len){
-        alert(`Well done the word was ${word}`); 
-        playAgain();
-    } else if(man === 0){
-        updateWord();
-        //delay alert until word updates
-        setTimeout(() => {
-            alert(`Game over! The word was ${word}`);
-            playAgain();
-        }, 1000);
+    popupWord.textContent = word;
+    if(score === len || man === 0){
+        overlay.classList.remove('hide');
+        popup.classList.remove('hide');
+        if(score === len) {
+            popupHeading.textContent = 'Well Done'; 
+        } else if(man === 0){
+            popupHeading.textContent = 'Hard Luck';
+            updateWord();
+        }
     } 
 }
 
@@ -91,9 +108,6 @@ const checkLetter = letterKeys.forEach(letterKey => {
         } else {
             man -= 1;
             drawMan();
-            if(man !== 10){
-                alert(`${key} is incorrect. Please choose another one! \nYou have ${man} guesses left.`);
-            }
         }
     });
 }); 
