@@ -9,8 +9,10 @@ This game looks best on tablet and laptop screens.
 * canvas for drawing the hangman, part of man is drawn with each incorrect guess
 * dashes to signify the number of letters in the randomly chosen word.
 * keyboard with eventListeners added to each key for choosing letters
-* popup alerts to let the user know if their guess was incorrect
-
+* popup alerts to inform the user if a guess is incorrect
+* popup confirm box asking the user if the wish to play again if:
+        * they have exceeded the number of incorrect guesses
+        * they guessed the word
 
 ## Technologies Used
 * HTML5
@@ -27,3 +29,5 @@ The code for adding a class at specific index first answer [here](https://stacko
 I used [this tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) to help draw the man. 
 
 The code to delete the hangman and get ready for a new game was copied from [here](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect)
+
+I received inspiration for the words in the array from [Oxford Owl](https://home.oxfordowl.co.uk/english/primary-spelling/spelling-year-5-age-9-10/) and from [kidspot](https://www.kidspot.com.au/parenting/preschool/spelling-bee-words-910/news-story/d2c32eb9af7b81043c71eb0a7d484809). I was looking for words suitable or 9a nd 10 year olds. 
