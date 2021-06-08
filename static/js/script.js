@@ -21,8 +21,8 @@ let len = 0;
 let man = 10;
 
 
-const wordArray = ['princess', 'unicorn','fixes', 'zebras', 'airport', 'yacht', 'naughty', 'hangers', 'handshake', 'milkshake', 'flexible', 'fridge', 'photograph', 'surfboards', 'bananas',
-'carrot', 'parsnip', 'blackcurrants', 'aubergine', 'broccoli', 'spinach', 'steak', 'sausages', 'chocolate', 'biscuit', 'yoghurt', 'blueberries', 'raspberries', 'grapes', 'watermelon', 'television', 'telephone', 'studio', 'visual', 'horoscope', 'nonesense', 'beautiful', 'picky', 'alphabet', 'pasta', 'helicopter', 'motorcycle', 'universal', 'bicycle', 'bathroom', 'bedroom', 'kitchen', 'cooker', 'saucepan', 'ketchup'];
+const wordArray = ['evening', 'remember','chimney', 'flower', 'shallow', 'monkey', 'answer', 'continue', 'direction', 'excuse', 'fraction', 'furniture', 'mention', 'station', 'strange',
+'thirsty', 'throne', 'understand', 'visitor', 'whenever', 'avenue', 'caution', 'century', 'daughter', 'exercise', 'genius', 'glacier', 'icicle', 'position', 'unlikely', 'value', 'vegetable', 'tomorrow', 'unusual', 'argue', 'people', 'borrow', 'amount', 'unlock', 'wonder', 'write', 'seashore', 'cough', 'thistle', 'knight', 'cereal', 'guest', 'further', 'lamb', 'island'];
 
 
 //removes any existing content in 'div.word'. To be completed later for resetting game
