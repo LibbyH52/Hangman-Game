@@ -1,6 +1,8 @@
 const selectedWord = document.querySelector('.word');
 const letterKeys = document.querySelectorAll('.key');
 const result = document.querySelector('.score #count');
+const guess = document.querySelector('#guess');
+const guessBtn = document.querySelector('.btn-guess');
 
 const overlay= document.querySelector('#overlay');
 const popup = document.querySelector('.popup');
@@ -34,6 +36,15 @@ const deleteWord = () => {
     selectedWord.innerHTML = '';
 }
 
+guessBtn.addEventListener("click", e => {
+    if(guess.value === randomWord) {
+        score += len - score;
+    } else if(guess !== randomWord){
+        man -= 1;
+        drawMan();
+    }
+    checkScore();
+})
 //picks a random word from wordArray and splits it
 const chooseRandomWord = () => {
     //chooses random word from array
@@ -73,6 +84,7 @@ playBtn.addEventListener('click', () =>{
     randomArray = [];
     clearMan();
     printSpaces();
+    document.querySelector('#guess').value = '';
 });
 
 
@@ -105,7 +117,7 @@ const checkLetter = letterKeys.forEach(letterKey => {
             }
         } 
         addLetter();
-        } else {
+        } else if(!randomWord.includes(key)){
             man -= 1;
             drawMan();
         }

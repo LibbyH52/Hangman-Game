@@ -1,11 +1,15 @@
 body{
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .header{
     background: #488f31;
     display: grid;
     grid-template-columns: 12fr;
+    height: 20vh;
 }
 
 .heading{
@@ -30,12 +34,39 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     padding: 3rem 0;
     width: 100vw;
     position: relative;
 }
 
+.word-guess{
+    flex:  0 0 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
 
+#guess{
+    line-height: 2rem;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.btn-guess{
+    background: #de425b;
+    border: 2px solid #f1f1f1;
+    margin-left: -2rem;
+    border-radius: 5px;
+    color: #f1f1f1;
+    padding: .5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+}
 .word-container{
     display:flex;
     flex-wrap: wrap;
@@ -113,9 +144,9 @@ body{
 }
 
 .blank{
-    border-bottom: 1px solid #003f5c;
+    border-bottom: 4px solid #003f5c;
     height: 3rem;
-    margin: 2rem .2rem;
+    margin: 2rem .5rem;
     width: 2rem;
 }
  
@@ -302,6 +333,10 @@ body{
 
 @media screen and (min-width: 810px) and (max-width: 992px){
     /*******************iPad Pro 10.5*/
+    .word-guess{
+        margin-top: 0;
+    }
+
     .keyboard{
         width: 75%;
     }
@@ -315,6 +350,7 @@ body{
     .game-container{
         margin: 0;
         width: 100%;
+        height: 80vh;
     }
 
   .word-container{
